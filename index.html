@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>The story of Process Isolation</title>
+		<title>Mašinsko učenje i motion capture</title>
 
 		<meta name="description" content="Process isolation presentation">
 		<meta name="author" content="Igor Sarcevic">
@@ -126,6 +126,10 @@
       .white {
         color: white !important;
       }
+      
+      .yellow {
+          color: #ffff22 !important;
+      }
 
       .blink {
         -webkit-animation: blinker 0.5s linear infinite alternate;
@@ -160,142 +164,248 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section data-background="#000">
-					<h2 class="orange">The Story of</h2>
-					<h1 class="white">Process Isolation</h1>
+					<h2 class="orange">Mašinsko učenje &</h2>
+                    <h1 class="white">motion capture sistemi</h1>
 				</section>
 
-				<section>
-          <section>
-            <h3>Hi!</h3>
-            <h3>I am <span class="red">Igor</span></h3>
-          </section>
+                <!-- Motion capture opis -->
+                <section>
+                    <section data-background="#000">
+                        <h1 class="white">motion capture</h1>
+                    </section>
 
-          <section>
-            <img width="250" data-src="images/semaphore.png">
-            <h3>Semaphore CI</h3>
-            <h4>#infra</h4>
-          </section>
+                    <section>
+                        <h2 class="orange">Optički sistemi:</h2>
+                        <h4 class="fragment">aktivni </h4>
+                        <h4 class="fragment">pasivni </h4>
+                        <h4 class="fragment">markerless </h4>
+                    </section>
 
-          <section>
-            <h3>We <span class="red">❤</span></h3>
-            <h4 class="fragment">containers</h4>
-            <h4 class="fragment">immutable platforms</h4>
-            <h4 class="fragment">virtualization</h4>
-            <h4 class="fragment">virtual box</h4>
-            <h4 class="fragment">docker</h4>
-            <h4 class="fragment">kvm</h4>
-          </section>
-				</section>
+                    <section>
+                        <h2>Magnetni sistemi?</h2>
+                        <img class="fragment" width="300" data-src="images/acdc.png">
+                    </section>
 
-				<section data-background="#000">
-          <section>
-            <h3 class="white">Let's start!</h3>
-          </section>
-				</section>
+                    <section>
+                        <h2 class="orange">Inercijalni sistemi <span class="red">❤</span></h2>
+                    </section>
 
-				<section>
-          <section>
-            <img width="500" data-src="images/docker.jpg">
-            <h2>is awesome</h2>
-          </section>
+                    <section>
+                        <h2>Ljudske poze?</h2>
+                    </section>
+                </section>
 
-          <section>
-            <h2>But why?</h2>
-          </section>
+                <!-- prica o inercijalnim sistemima -->
+                <section>
+                    <section data-background="#000">
+                        <h2 class="orange">Inercijalni sistemi za praćenje pokreta</h2>
+                    </section>
 
-          <section>
-            <h2>What did we use before Docker?</h2>
-          </section>
-				</section>
+                    <section data-background="images/gyro.jpg">
+                        <!--<img width="500" data-src="images/gyro.jpg">-->
+                        <h2 class="fragment">+</h2>
+                    </section>
 
-				<section>
-          <section>
-            <img width=200 src="images/one-app.png">
-          </section>
+                    <section>
+                        <img width="500" data-src="images/acc.png">
+                        <h2 class="fragment">+</h2>
+                    </section>
 
-          <section>
-            <img width=700 src="images/kernel.png">
-          </section>
+                    <section data-background="images/magnet.jpg">
+                        <h2 class="fragment">=</h2>
+                    </section>
 
-          <section>
-            <img width=700 src="images/virtual-memory.png">
-          </section>
-				</section>
+                    <section data-background="images/mems.jpg">
+                        <div class="fragment">
+                            <h2 class="orange">IMU</h2>
+                            <h4 class="white"> Inertial measurement unit </h4>
+                        </div>
+                        <h2 class="fragment">+</h2>
+                    </section>
 
-        <section data-background="#000">
-          <h3 class="white">Control Groups/Jails</h3>
-        </section>
+                    <section>
+                        <h2 class="orange">Sensor fusion <span class="red">❤</span> </h2>
+                        <h2 class="fragment">=</h2>
+                    </section>
 
-				<section>
-          <section>
-            <img class="fragment" width=900 src="images/cgroup-cmd-1.png">
-            <img class="fragment" width=900 src="images/cgroup-cmd-2.png">
-            <img class="fragment" width=900 src="images/cgroup-cmd-3.png">
-          </section>
+                    <section data-background="images/drone.jpg">
+                        <div class="partial">
+                            <h2 class="white">AHRS</h2>
+                            <h4 class="white">Attitude and heading reference system</h4>
+                            <div class="white fragment">
+                                <small>
+                                <h2>and maybe INS</h2>
+                                <h4>Inertial Navigation System</h4>
+                                </small>
+                            </div>
+                        </div>
+                    </section>
 
-          <section>
-            <img width=700 src="images/cgroup-red-group.png">
-          </section>
+                    <section data-background="images/kalman.png">
+                        <h2 class="fragment">Kalman filtri</h2>
+                    </section>
 
-          <section>
-            <img width=700 src="images/cgroup-blue-group.png">
-          </section>
-				</section>
+                    <section>
+                        <img data-src="images/kalman_algoritam.svg">
+                    </section>
 
-        <section data-background="#000">
-          <h3 class="white">LXC</h3>
-        </section>
+                </section>
 
-				<section>
-          <section>
-            <img class="fragment" width=900 src="images/lxc-cmd-1.png">
-            <img class="fragment" width=900 src="images/lxc-cmd-2.png">
-          </section>
+                <section>
+                    <section data-background="#000">
+                        <h1 class="white">Orijentacija</h1>
+                    </section>
 
-          <section>
-            <img width=900 src="images/lxc.png">
-          </section>
-				</section>
+                    <section data-background="#000">
+                        <img width="900" data-src="images/no.gif">
+                    </section>
 
-				<section>
-          <img width="500" data-src="images/docker.jpg">
-					<h2>Docker is like LXC on steroids</h2>
-				</section>
+                    <section>
+                        <h2>Ojlerovi uglovi?</h2>
+                        <img width="900" data-src="images/euler.svg">
+                    </section>
+                    <section data-background="images/carmack.png">
+                        <h1 class="red fragment">NOPE </h1>
+                        <h4 class="orange fragment">A rotacione matrice?</h4>
+                    </section>
 
-				<section>
-          <img width="400" data-src="images/coreos.png">
-				</section>
+                    <section data-background="#000">
+                        <h2 class="orange">Kvaternioni</h2>
+                    </section>
 
-				<section>
-          <img width="900" data-src="images/coreos-kernel.png">
-				</section>
+                    <section>
+                        <h4><i> q=(x, i, j, k)</i></h4>
+                        <h4><i> i<sup>2</sup>=j<sup>2</sup>=k<sup>2</sup>=ijk=-1</i></h4>
+                    </section>
 
-				<section>
-          <h3>Isolation</h3>
-          <h2>vs.</h2>
-          <h3>Virtualization</h3>
-				</section>
+                    <section>
+                        <img width="300" data-src="images/quaternion_rot.png">
+                        <h4 class="black fragment"> positive definite kvaternioni?</h4>
+                    </section>
+                </section> 
 
-				<section>
-          <h3>Isolation</h3>
-          <h2>vs.</h2>
-          <h3>KVM / XEN</h3>
-				</section>
+                <section>
+                    <section data-background="#000">
+                        <h1 class="white">Xsens MVN</h1> 
+                        <h2 class="orange">motion capture odelo</h2>
+                        <img width="300"data-src="images/logo_xsens.svg">
+                    </section>
 
-				<section>
-          <h2 class="orange">Are containers</h2>
-          <h3>secure?</h3>
-				</section>
+                    <section>
+                        <img width="900" data-src="images/mvn_odelo.jpg">
+                    </section>
 
-				<section>
-          <img width=400 src="images/fun.png">
+                    <section data-background="images/odela.jpg">
+                        <h2 class="orange fragment">MVN Link i MVN Awinda</h2>
+                        <h4 class="fragment"><small>problemi?</small></h4>
+                    </section>
+                </section>
 
-				  <h1>That's all!</h1>
-				</section>
+                <section>
+                    <section data-background="#000">
+                        <h1 class="white">Rekonstrukcija pokreta</h1>
+                    </section>
 
-				<section data-background="#ffffff">
-					<h2>@igor_sarcevic</h2>
-				</section>
+                    <section>
+                        <h2 class="orange">kNN pristup</h2>
+                        <img width="400" class="fragment" data-src="images/knn.png">
+                    </section>
+
+                    <section>
+                        <h3>bliske poze?</h3> 
+                    </section>
+
+                    <section>
+                        <h2 class="orange">pretraga prostora:</h2> 
+                    </section>
+
+                    <section data-background="images/kdtree.jpg">
+                        <h1 class="red fragment">kD stabla</h1>
+                    </section>
+
+                    <section data-background="images/delaunay.jpg">
+                        <h2 class="fragment">Delaunay trijangulacija</h2>
+                        <h2 class="fragment">Gabriel graph</h2>
+                        <h2 class="fragment">Relative neighborhood graph</h2>
+                        <h2 class="fragment">Beta skeleton</h2>
+                    </section>
+
+                    <section>
+                        <h1 class="red">kD tree ⚡ graf baza</h1>
+                    </section>
+
+                    <section>
+                        <h1 class="red">Rezultati rekonstrukcije</h1>
+                        <h4 class="fragment">metrika </h4>
+                        <h4 class="fragment">glitching </h4>
+                        <h4 class="fragment">neeuklidski prostor </h4>
+                    </section>
+
+                </section>
+
+                <section>
+                    <section data-background="#000">
+                        <h1 class="white">Neuronske mreže</h1>
+                    </section>
+
+                    <section data-background="images/network_output.jpg">
+                        <h1 class="fragment">Ulazi</h1>
+                        <h1 class="fragment">Izlazi</h1>
+                        <h1 class="fragment">Treniranje</h1>
+                    </section>
+                    
+                </section>
+
+                <section>
+                    <section data-background="#000">
+                        <h1 class="white">želimo:</h1>
+                        <ol>
+                            <li><h3 class="red fragment">dobru rekonstrukciju</h3></li>
+                            <li><h3 class="red fragment">bez glitcheva</h3></li>
+                            <li><h3 class="red fragment">generalizaciju</h3></li>
+                        </ol>
+                    </section>
+
+                </section>
+
+                <section>
+                    <section data-background="#000">
+                        <h1 class="white">Deep neural networks!</h1>
+                        <h2 class="orange fragment">but how to train them?</h2>
+                    </section>
+
+                    <section data-background="images/fft.jpg">
+                        <h1 class="white fragment">Sliding window</h1>
+                    </section>
+
+                    <section data-background="images/deepdream1.jpg">
+                        <h1 class="white fragment">Konvolutivne mreže</h1>
+                    </section>
+
+                    <section data-background="images/autoencoder.png">
+                        <h1 class="fragment">Autoenkoderi</h1>
+                    </section>
+                    
+                    <section data-background="images/rnn.jpg">
+                        <h1 class="fragment">Rekurentne neuralne mreže</h1>
+                    </section>
+
+                    <section data-background="images/autoencoder.jpg">
+                        <h1 class="red">LSTM</h1>
+                        <img width="1000" data-src="images/lstm.png">
+                    </section>
+
+                    <section data-background="images/doge.jpg">
+                        <h2 class="white fragment">Arhitektura? </h2>
+                        <h1 class="white fragment">Rezultati? </h1>
+                    </section>
+                </section>
+
+                <section data-background="#000">
+                    <h2 class="orange">Pitanja?</h2>
+                    <h4>@mihailo_isakov</h4>
+                </section>
+                
 			</div>
 
 		</div>
